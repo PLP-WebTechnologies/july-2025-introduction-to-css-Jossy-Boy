@@ -1,0 +1,168 @@
+/* ---- Root & Reset ---- */
+:root{
+  --bg: #fafafa;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --brand: #2563eb;
+  --brand-ink: #0b3aa2;
+  --card: #ffffff;
+
+  /* Borders */
+  --br-soft: 10px;
+  --br-pill: 999px;
+
+  /* Spacing scale */
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Shadows */
+  --shadow-1: 0 1px 2px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.1);
+  --shadow-2: 0 8px 24px rgba(0,0,0,.08);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  padding: 0; margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ---- Layout Helpers ---- */
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.section { padding: var(--space-12) 0; }
+
+h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 var(--space-4); }
+p { margin: 0 0 var(--space-4); color: var(--muted); }
+.lead { font-size: 1.125rem; }
+
+/* ---- Navigation ---- */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky; top: 0; z-index: 10;
+}
+
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-4) 0;
+}
+
+.brand {
+  font-weight: 700; text-decoration: none; color: var(--text);
+}
+
+.nav-links {
+  list-style: none; display: flex; gap: var(--space-4); margin: 0; padding: 0;
+}
+.nav-links a {
+  text-decoration: none; color: var(--text);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--br-pill);
+}
+.nav-links a:hover { background: #f3f4f6; }
+
+/* ---- Hero ---- */
+.hero {
+  background: linear-gradient(180deg, #eef2ff, #ffffff);
+  border-bottom: 1px solid #e5e7eb;
+}
+.hero .container { padding: var(--space-16) 0; }
+.hero h1 { font-size: clamp(2rem, 1.6rem + 1.5vw, 3rem); }
+.hero .btn { margin-top: var(--space-4); }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  background: var(--brand);
+  color: white; text-decoration: none; border: 0;
+  border-radius: var(--br-pill);
+  box-shadow: var(--shadow-1);
+  transition: transform .05s ease, background .2s ease;
+  cursor: pointer;
+}
+.btn:hover { background: var(--brand-ink); }
+.btn:active { transform: translateY(1px); }
+
+.btn-small { padding: var(--space-2) var(--space-4); font-size: .9rem; }
+.btn-ghost {
+  background: transparent; color: var(--brand);
+  border: 1px solid #bfdbfe;
+}
+.btn-ghost:hover { background: #eff6ff; }
+
+/* ---- Cards Grid ---- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--br-soft);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-1);
+}
+.card h3 { margin-bottom: var(--space-2); }
+
+/* ---- Box Model Lab ---- */
+.lab-row {
+  display: grid; gap: var(--space-6); margin-top: var(--space-6);
+  grid-template-columns: repeat(3, 1fr);
+}
+.lab-row + .lab-row { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) {
+  .lab-row, .lab-row + .lab-row { grid-template-columns: 1fr; }
+}
+
+.box-demo {
+  background: #fef3c7;                 /* visualize content box */
+  border: 3px dashed #f59e0b;          /* visualize border */
+  border-radius: var(--br-soft);
+  box-shadow: var(--shadow-2);
+}
+
+/* margin utility (outside spacing) */
+.m-sm { margin: var(--space-3); }
+.m-md { margin: var(--space-6); }
+.m-lg { margin: var(--space-12); }
+.no-margin { margin: 0; }
+
+/* padding utility (inside spacing) */
+.p-xs { padding: .375rem; }
+.p-md { padding: var(--space-4); }
+.p-xl { padding: var(--space-8); }
+.no-padding { padding: 0; }
+
+/* ---- Footer ---- */
+.site-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: var(--space-6) 0;
+  background: #ffffff;
+  text-align: center;
+}

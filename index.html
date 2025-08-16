@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Box Model & Layout Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="#">MyFlier</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#cards">Cards</a></li>
+        <li><a href="#lab">Box Model Lab</a></li>
+        <li><a href="#contact" class="btn btn-small">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero / Intro -->
+  <section class="hero">
+    <div class="container">
+      <h1>Community Program Invitation</h1>
+      <p class="lead">
+        Join us for an inspiring gathering featuring keynote speakers, live sessions, and networking.
+      </p>
+      <a class="btn" href="#contact">RSVP Now</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <main class="container">
+    <section id="about" class="section">
+      <h2>About the Event</h2>
+      <p>
+        This sample page demonstrates semantic HTML, a separate CSS file, and deliberate use of the CSS Box Model.
+        Explore the sections below to see spacing, alignment, and visual hierarchy.
+      </p>
+      <p>
+        Modify <code>styles.css</code> to experiment with margins, paddings, and borders. Watch how each change
+        affects layout flow and component spacing.
+      </p>
+    </section>
+
+    <!-- Cards Grid -->
+    <section id="cards" class="section">
+      <h2>Program Highlights</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Keynote</h3>
+          <p>Hear from industry leaders on innovation and community impact.</p>
+          <button class="btn btn-ghost">Learn More</button>
+        </article>
+
+        <article class="card">
+          <h3>Workshops</h3>
+          <p>Hands-on sessions to develop practical skills and collaboration.</p>
+          <button class="btn btn-ghost">View Schedule</button>
+        </article>
+
+        <article class="card">
+          <h3>Networking</h3>
+          <p>Connect with peers, mentors, and potential partners.</p>
+          <button class="btn btn-ghost">Get Tickets</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Box Model Lab -->
+    <section id="lab" class="section">
+      <h2>Box Model Lab</h2>
+      <p>
+        Each box below has visible backgrounds and borders. Adjust margins and paddings in
+        <code>styles.css</code> to see how layout shifts.
+      </p>
+
+      <div class="lab-row">
+        <div class="box-demo m-sm p-xs">
+          <h4>Small Margin / Extra-Small Padding</h4>
+          <p>margin: small; padding: x-small;</p>
+        </div>
+
+        <div class="box-demo m-md p-md">
+          <h4>Medium Margin / Medium Padding</h4>
+          <p>Balanced spacing for general content.</p>
+        </div>
+
+        <div class="box-demo m-lg p-xl">
+          <h4>Large Margin / Extra-Large Padding</h4>
+          <p>Spacious layout—good for emphasis areas.</p>
+        </div>
+      </div>
+
+      <div class="lab-row">
+        <div class="box-demo no-margin p-md">
+          <h4>No Margin / Medium Padding</h4>
+          <p>Boxes touch; inner spacing still comfortable.</p>
+        </div>
+
+        <div class="box-demo m-md no-padding">
+          <h4>Medium Margin / No Padding</h4>
+          <p>Content up against the border.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="section cta">
+      <h2>Ready to Join Us?</h2>
+      <p>Save your seat for the program and invite your friends.</p>
+      <a href="#" class="btn">Secure Your Spot</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year">2025</span> MyFlier. All rights reserved.</small>
+    </div>
+  </footer>
+</body>
+</html>
